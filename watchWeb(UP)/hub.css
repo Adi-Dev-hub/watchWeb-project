@@ -18,24 +18,25 @@
 #navbar {
     display: flex;
     align-items: center;
-    position: sticky;
+    /* position: sticky; */
     top: 0px;
     z-index: 1;
     transform: translateX(-50% -50%);
 }
-
+.scroll{  
+    background-color: black;
+                }
 #navbar ul {
     display: flex;
 }
 
 #navbar::before {
     content: " ";
-    background-color: black;
+   background-color: transparent;
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: -1;
-    /* opacity: 0.9; */
+  
 
 }
 
