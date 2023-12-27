@@ -9,38 +9,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+<style>
+    #testC {
+        display: inline;
+        border: 2px solid black;
+        width: 100px;
+        right: 10px;
+        position: fixed;
+        top: 400px;
+
+    }
+</style>
 
 <body>
-    <nav id="navbar" class="scroll">
-        <div id="logo">
-            <img src="watchweb-high-resolution-logo-white-transparent.png" alt="">
+    <div id="overlap">
+        <div class="slides">
+            <!-- <img src="slider3.jpg" alt=""> -->
+            <!-- <img src="slider1.jpg" alt=""> -->
+            <img src="slider2.jpg" alt="">
+            <img src="slider4.jpg" alt="">
+            <!-- <img src="slider5.jpeg" alt=""> -->
         </div>
-        <ul>
-            <li class="item"><a href="index.html">Home</a></li>
-            <li class="item"><a href="about.html">About Us</a></li>
-            <li class="item"><a href="support.html">Support</a></li>
-            <li class="item"><a href="login.html">Create</a></li>
-            <div class="searchbox">
-                <input type="search" name="help" id="" placeholder=" Search your product">
-                <button><img src="searchlogo.png" alt="">  </button>
-        </ul>
-    </nav>
 
-
-    <div class="slides">
-        <img src="slider3.jpg" alt="">
-        <img src="slider1.jpg" alt="">
-        <img src="slider2.jpg" alt="">
-        <img src="slider4.jpg" alt="">
-        <img src="slider5.jpeg" alt="">
+        <nav id="navbar" class="scroll">
+            <div id="logo">
+                <img src="watchweb-high-resolution-logo-white-transparent.png" alt="">
+            </div>
+            <ul>
+                <li class="item"><a href="index.html">Home</a></li>
+                <li class="item"><a href="about.html">About Us</a></li>
+                <li class="item"><a href="support.html">Support</a></li>
+                <li class="item"><a href="login.html">Create</a></li>
+                <div class="searchbox">
+                    <input type="search" name="help" id="" placeholder=" Search your product">
+                    <button><img src="searchlogo.png" alt=""> </button>
+            </ul>
+        </nav>
     </div>
+    <div id="testC">hello</div>
     <div class="heading">
         <strong>Hot-Selling Gadgets</strong>
         <i class="fas fa-chevron-circle-left" onmousedown="fun1()"></i>
         <i class="fas fa-chevron-circle-right" onmousedown="fun2()"></i>
     </div>
 
-    <div class="grid" id="scroll" style="overflow: scroll;">
+    <div class="grid" id="scroll_items" style="overflow: scroll;">
         <div class="items">
             <img src="P1.jpeg" alt="">
 
@@ -50,8 +63,10 @@
                     BT Calling | AI Voice assistant</h6>
                 <p class="price">
                     ₹ 8,995
-                    <a href="https://amzn.eu/d/0tk4LFN"><button class="w3-btn w3-deep-purple">Buy now </button><img src="icons8-amazon-94.png" alt="">
-                    <img src="icons8-flipkart-50.png" alt=""><img style="background: none" src="icontitan.png" alt=""></a>
+                    <a href="https://amzn.eu/d/0tk4LFN"><button class="w3-btn w3-deep-purple">Buy now </button><img
+                            src="icons8-amazon-94.png" alt="">
+                        <img src="icons8-flipkart-50.png" alt=""><img style="background: none" src="icontitan.png"
+                            alt=""></a>
                 </p>
 
             </div>
@@ -109,8 +124,8 @@
                     ₹29,999
                     <a
                         href="https://www.flipkart.com/apple-watch-se-gps-2nd-gen-heart-rate-monitor-crash-detection-sleep-tracking/p/itm8d0268af329ea"><button
-                        class="w3-btn w3-deep-purple">Buy
-                        now</button></a>
+                            class="w3-btn w3-deep-purple">Buy
+                            now</button></a>
                 </p>
                 </p>
             </div>
@@ -154,7 +169,7 @@
         <a href="login.html">
             <img src="nirajchopra" alt="">
         </a>
-       
+
     </div>
     <div class="logo">
         <div class="company" id="logo1">
@@ -194,6 +209,24 @@
 
 
     <script>
+
+        function updateValue() {
+            if (window.scrollY == 0) {
+                const bodyscroll = document.getElementsByClassName("scroll");
+                bodyscroll.backgroundColor = "rgb(0,0,0,0)";
+            }
+            const bodyscroll = window.scrollY;
+            document.getElementById("testC").innerHTML = bodyscroll
+            document.getElementById("testC").style.color = "red"
+            if (window.scrollY == 0) {
+                document.getElementById("testC").style.color = "blue"
+            }
+        }
+        window.addEventListener("scroll", updateValue)
+        // alert(bodyscroll)
+        //code for heading effect
+
+        //slides for image display
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slides img');
         const totalSlides = slides.length;
@@ -218,13 +251,13 @@
         // Automatic slideshow
         setInterval(nextSlide, 5000); // Change slide every 5 seconds
 
-// for scrolling products
+        // for scrolling products
         function fun1() {
-            document.getElementById('scroll').scrollLeft -= 300;
+            document.getElementById('scroll_items').scrollLeft -= 300;
         }
 
         function fun2() {
-            document.getElementById('scroll').scrollLeft += 300;
+            document.getElementById('scroll_items').scrollLeft += 300;
         }
         //for website scoll function
 

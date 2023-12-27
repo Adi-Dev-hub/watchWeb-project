@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    font-weight: large;
 }
 
 #logo {
@@ -15,37 +14,41 @@
     margin: 12px -36px;
 }
 
+#overlap {
+    height: 600px;
+}
+
 #navbar {
     display: flex;
     align-items: center;
-    /* position: sticky; */
-    top: 0px;
-    z-index: 1;
-    transform: translateX(-50% -50%);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    /* transform: translateX(-50% -50%); */
 }
-.scroll{  
+
+/* .scroll{  
     background-color: black;
-                }
+                } */
 #navbar ul {
     display: flex;
 }
 
 #navbar::before {
     content: " ";
-   background-color: transparent;
+    background-color: transparent;
     position: absolute;
     height: 100%;
     width: 100%;
-  
-
 }
 
 #navbar ul li {
     list-style: none;
-
     font-size: 1.3rem;
 }
+
 .searchbox {
+    /* margin-left: 10%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,18 +64,20 @@
     font-size: 26px;
     height: 40px;
 }
+
 .searchbox button {
     border: none;
     font-size: 20px;
     margin-left: 3px;
-    height:40px;
+    height: 40px;
     /* border-radius: 15px; */
     width: 215px;
 }
+
 #navbar ul li a {
     position: relative;
     display: block;
-    color: white;
+    color: black;
     padding: 9px 72px;
     text-decoration: none;
 }
@@ -105,19 +110,12 @@
     transform: translateX(-50%) scaleX(1);
 }
 
-.slider {
-    display: flex;
-}
-
-/* .slider img {
-    height: 100%;
+.slides {
+    height: 70%;
     width: 100%;
-} */
-.slider::before {
-    content: " ";
+    display: block;
     position: absolute;
-    z-index: -1;
-    opacity: 0.5;
+    /* z-index: 1; */
 }
 
 .slides img {
@@ -192,16 +190,19 @@
     width: 100%;
     padding: 3px 2px 0px 16px;
 }
-.price button{
-    border: 1px solid ;
+
+.price button {
+    border: 1px solid;
     border-radius: 20px;
     width: 150px;
     margin-bottom: 8px;
 }
-.price img{
+
+.price img {
     width: 50px;
     border: none;
 }
+
 .p {
     position: relative;
     font-weight: 600px;
@@ -234,66 +235,68 @@
     height: inherit;
     width: inherit;
 }
+
 /* for support webpage */
-.support_company{
+.support_company {
     height: 280px;
     width: 350px;
     margin-top: 50px;
-    
+
 }
-.support_company img{
+
+.support_company img {
     height: inherit;
     width: inherit;
 }
-.support_page_logo{
+
+.support_page_logo {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     height: fit-content;
 }
-.body1{
-    margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-    
-}
-.support_features{
+
+
+.support_features {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
 }
+
 .items_of_support {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border:1px solid black;
+    border: 1px solid black;
     width: 350px;
     height: 200px;
     margin: 1px 10px;
     /* background-color: rgb(177 142 142); */
     border-radius: 25px;
 }
-.items_of_support:hover{
-      box-shadow: 5px 5px gray;
 
-  }
-  #forgot{
-    margin-left:260px ;
+.items_of_support:hover {
+    box-shadow: 5px 5px gray;
+
+}
+
+#forgot {
+    margin-left: 260px;
     margin-right: 10px;
-    
-  }
-  #bill{
-    margin-left:10px ;
+
+}
+
+#bill {
+    margin-left: 10px;
     margin-right: 310px;
-  }
-.items_of_support img{
+}
+
+.items_of_support img {
     display: block;
     flex-direction: row;
     width: 100px;
-} 
+}
 
 h1 {
     margin-top: 55px;
@@ -332,16 +335,18 @@ h1 {
     width: 100%;
 }
 
-.shop:hover,.shop:focus {
+.shop:hover,
+.shop:focus {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-.abtus img{
-   width: 500px;
-   height: 500px;
-   margin-top: 50px;
-   margin-bottom: 50px;
+
+.abtus img {
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .support_features {
@@ -354,40 +359,3 @@ h1 {
     border: 2px solid black;
     flex-direction: column;
 }
-
-/* #logo6{
-    width: 50px;
-    height: 50px;
-} */
-/* #logo1 {
-    background-image: url('noise.png');
-}
-
-#logo2 {
-    background-image: url('https://marksmendaily.com/wp-content/uploads/2023/02/Abhishek-MPL-3.png');
-}
-
-#logo3 {
-    background-image: url("https://download.logo.wine/logo/Redmi/Redmi-Logo.wine.png");
-}
-
-#logo4 {
-    background-image: url("https://download.logo.wine/logo/Redmi/Redmi-Logo.wine.png");
-}
-
-#logo5 {
-    background-image: url("https://download.logo.wine/logo/Redmi/Redmi-Logo.wine.png");
-}
-
-#logo6 {
-    background-image: url("https://download.logo.wine/logo/Redmi/Redmi-Logo.wine.png");
-}
-
-#logo7 {
-    background-image: url("https://download.logo.wine/logo/Redmi/Redmi-Logo.wine.png");
-}
-
-#logo1,#logo2,#logo3,#logo4,#logo5,#logo6,#logo7{
-    background-size: cover;
-    
-} */
