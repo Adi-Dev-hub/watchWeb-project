@@ -32,14 +32,14 @@
         </div>
 
         <nav id="navbar" class="scroll">
-            <div id="logo">
-                <img src="watchweb-high-resolution-logo-white-transparent.png" alt="">
+            <div id="watchlogo">
+                <img id="logoimage" src="watchweb-high-resolution-logo-white-transparent.png" alt="">
             </div>
             <ul>
-                <li class="item"><a href="index.html">Home</a></li>
-                <li class="item"><a href="about.html">About Us</a></li>
-                <li class="item"><a href="support.html">Support</a></li>
-                <li class="item"><a href="login.html">Create</a></li>
+                <li class="page"><a href="index.html">Home</a></li>
+                <li class="page"><a href="about.html">About Us</a></li>
+                <li class="page"><a href="support.html">Support</a></li>
+                <li class="page"><a href="login.html">Sign In</a></li>
                 <div class="searchbox">
                     <input type="search" name="help" id="" placeholder=" Search your product">
                     <button><img src="searchlogo.png" alt=""> </button>
@@ -68,7 +68,6 @@
                         <img src="icons8-flipkart-50.png" alt=""><img style="background: none" src="icontitan.png"
                             alt=""></a>
                 </p>
-
             </div>
         </div>
 
@@ -206,25 +205,39 @@
         </div>
 
     </div>
-
-
     <script>
 
+        //code for heading effect
         function updateValue() {
-            if (window.scrollY == 0) {
-                const bodyscroll = document.getElementsByClassName("scroll");
-                bodyscroll.backgroundColor = "rgb(0,0,0,0)";
-            }
             const bodyscroll = window.scrollY;
-            document.getElementById("testC").innerHTML = bodyscroll
-            document.getElementById("testC").style.color = "red"
+            // document.getElementById("testC").innerHTML = bodyscroll
             if (window.scrollY == 0) {
-                document.getElementById("testC").style.color = "blue"
+                original();
+                // document.getElementById("testC").style.color = "blue"
+            }
+            else {
+                change();
             }
         }
-        window.addEventListener("scroll", updateValue)
-        // alert(bodyscroll)
-        //code for heading effect
+        const navigation = document.getElementById("navbar")
+        function change() {
+            // document.getElementById("testC").style.color = "red"
+            const FirstImg = document.getElementById("watchlogo").childNodes[1];
+            var navlink = document.querySelectorAll(".page a");
+            navlink.forEach(navlink => navlink.style.color = "white")
+            FirstImg.setAttribute("src", "watchweb-high-resolution-logo-white-transparent.png")
+            navigation.style.backgroundColor = "black"
+        }
+        function original() {
+            var navlink = document.querySelectorAll(".page a");
+            navlink.forEach(navlink => navlink.style.color = "black")
+            const FirstImg = document.getElementById("watchlogo").childNodes[1];
+            // document.getElementById("testC").innerHTML=FirstImg[1];
+            // FirstImg.style.border="2px solid black"
+            navigation.style.backgroundColor = " rgb(0,0,0,0)"
+            FirstImg.setAttribute("src", "watchweb-high-resolution-logo-black-transparent.png")
+        }
+        window.addEventListener("scroll", updateValue);
 
         //slides for image display
         let slideIndex = 0;
@@ -259,10 +272,6 @@
         function fun2() {
             document.getElementById('scroll_items').scrollLeft += 300;
         }
-        //for website scoll function
-
-
-
     </script>
 </body>
 
