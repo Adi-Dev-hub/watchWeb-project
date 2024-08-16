@@ -9,12 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@300&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@300&display=swap"
-        rel="stylesheet">
-    <style>
+        rel="stylesheet">    
+        <style>
         body{position: relative;}
         form {
             display: flex;
@@ -24,7 +20,7 @@
             align-items: center;
         }
 
-        .searchbox {
+        /* .searchbox {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -32,45 +28,47 @@
             width: 400px;
             border: 1px solid;
             border-radius: 15px;
-        }
-
+        } */
+            #img_contain{
+                height: 80vh;
+              
+            }
+            #img_contain img{
+                    width: 100%;
+                    z-index: 1;
+                position: absolute;
+                top:0
+            }
         h1 {
             font-size: 40px;
         }
 
-        input {
-            border: 0;
-            font-size: 26px;
-            height: 40px;
-        }
 
         h1 {
             text-align: center;
-        }
-
-        .searchbox button {
-            font-size: 20px;
-            margin-left: 3px;
-            height: 65px;
-            border-radius: 15px;
-            width: 215px;
         }
     </style>
 </head>
 
 <body>
-    <img style="z-index: 1;position: absolute;" src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_heros/hero-banner-homepage.image.large_2x.jpg"
-    alt="test">
-    <nav id="navbar" style="z-index: 5;">
-        <div id="logo">
-            <img src="watchweb-high-resolution-logo-white-transparent.png" alt="">
+    <div id="img_contain">
+        <img  src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_heros/hero-banner-homepage.image.large_2x.jpg"
+        alt="test">
+    </div>
+    <nav id="navbar" class="scroll">
+        <div id="watchlogo">
+            <img id="logoimage" src="watchweb-high-resolution-logo-white-transparent.png" alt="">
         </div>
-        <ul>
-            <li class="item"><a href="index.html">Home</a></li>
-            <li class="item"><a href="about.html">About Us</a></li>
-            <li class="item"><a href="support.html">Support</a></li>
-            <li class="item"><a href="login.html">Sign In</a></li>
+        <ul type="none">
+            <li class="page"><a href="index.html">Home</a></li>
+            <li class="page"><a href="about.html">About Us</a></li>
+            <li class="page"><a href="support.html">Support</a></li>
+            <li class="page"><a href="login.html">Sign In</a></li>
         </ul>
+        <div class="searchbox">
+            <input type="text" name="help" id="" placeholder=" Search your product.....">
+            <button><img src="searchlogo.png" alt=""> </button>
+            </div>
     </nav>
     <h1>
         watchWeb Support
@@ -131,6 +129,38 @@
             <button>search</button>
         </div>
     </form>
+    <script>
+    //code for heading effect
+    function updateValue() {
+        const bodyscroll = window.scrollY;
+        // document.getElementById("testC").innerHTML = bodyscroll
+        if (window.scrollY == 0) {
+            original();
+            // document.getElementById("testC").style.color = "blue"
+        }
+        else {
+            change();
+        }
+    }
+    const navigation = document.getElementById("navbar")
+    function change() {
+        // document.getElementById("testC").style.color = "red"
+        const FirstImg = document.getElementById("watchlogo").childNodes[1];
+        var navlink = document.querySelectorAll(".page a");
+        navlink.forEach(navlink => navlink.style.color = "white")
+        FirstImg.setAttribute("src", "watchweb-high-resolution-logo-white-transparent.png")
+        navigation.style.backgroundColor = "black"
+    }
+    function original() {
+        var navlink = document.querySelectorAll(".page a");
+        navlink.forEach(navlink => navlink.style.color = "black")
+        const FirstImg = document.getElementById("watchlogo").childNodes[1];
+        // document.getElementById("testC").innerHTML=FirstImg[1];
+        // FirstImg.style.border="2px solid black"
+        navigation.style.backgroundColor = " rgb(0,0,0,0)"
+        FirstImg.setAttribute("src", "watchweb-high-resolution-logo-black-transparent.png")
+    }
+    window.addEventListener("scroll", updateValue);</script>
 </body>
 
 </html>

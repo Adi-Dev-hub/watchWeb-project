@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    /* cursor: pointer; */
 }
 
 #watchlogo {
@@ -15,10 +16,12 @@
 }
 
 #overlap {
-    height: 700px;
+    height: 80vh;
 }
 
 #navbar {
+    border: whitesmoke 1px solid;
+    justify-content: space-between;
     height: 10%;
     width: 100%;
     display: flex;
@@ -29,59 +32,17 @@
     /* transform: translateX(-50% -50%); */
 }
 
-
 #navbar ul {
+    width: 35%;
     display: flex;
-}
-
-#navbar::before {
-    content: " ";
-    background-color: transparent;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-#navbar ul li {
-    list-style: none;
-    font-size: 1.3rem;
-}
-
-.searchbox {
-    margin-left: 220px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: whitesmoke;
-    height: 45px;
-    width: 400px;
-    border: 1px solid white;
-    border-radius: 15px;
+    justify-content: space-around;
 }
-
-.searchbox input {
-    border: none;
-    font-size: 25px;
-    height: 30px;
-    margin-left: 1%;
-}
-
-.searchbox button {
-    border: none;
-    border-radius: 20%;
-    font-size: 20px;
-    margin-left: 3px;
-    height: 40px;
-    width: 215px;
-}
-
-
-
 #navbar ul li a {
+    font-size: 1.5rem;
     position: relative;
     display: block;
-    color: white;
-    padding: 9px 72px;
+    /* padding: 9px 72px; */
     text-decoration: none;
 }
 
@@ -109,6 +70,34 @@
 #navbar ul li a:hover:after {
     -webkit-transform: translateX(-50%) scaleX(1);
     transform: translateX(-50%) scaleX(1);
+}
+
+.searchbox {
+    margin-right: 0.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    height: 45px;
+    width: 400px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.searchbox input {
+    border: none;
+    font-size: 25px;
+    height: 30px;
+    margin-left: 1%;
+}
+
+.searchbox button {
+    border: none;
+    border-radius: 20%;
+    font-size: 20px;
+    margin-left: 3px;
+    height: 40px;
+    width: 215px;
 }
 
 .slides {
@@ -187,15 +176,22 @@
     padding: 3px 2px 0px 16px;
 }
 
-.price button {
+.shops{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    border:1px solid gray;
+}
+.buy{
+    /* height: 30px; */
     border: 1px solid;
     border-radius: 20px;
     width: 150px;
     margin-bottom: 8px;
 }
-
-.price img {
-    width: 50px;
+.buy img{
+    width: 35px;
     border: none;
 }
 
@@ -216,7 +212,6 @@
     height: 200px;
     width: 350px;
     margin-top: 50px;
-
 }
 
 .logo {
@@ -234,46 +229,33 @@
 
 /* for support webpage */
 .support_company {
-    height: 280px;
-    width: 350px;
+    height: 100%;
     margin-top: 50px;
-
+    
 }
 
 .support_company img {
     height: inherit;
     width: inherit;
 }
-
-.support_page_logo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: fit-content;
-}
-
-
 .support_features {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-
+    justify-content: space-around;
+    margin-top: 10%;
 }
 
 .items_of_support {
+    flex-direction: column;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid black;
     width: 350px;
     height: 200px;
     margin: 1px 10px;
     border-radius: 25px;
-}
-
-.items_of_support:hover {
-    box-shadow: 5px 5px gray;
-
+    background-color: whitesmoke;
+    box-shadow: 10px 10px rgb(230, 230, 230, 1);
 }
 
 #forgot {
@@ -342,15 +324,4 @@ h1 {
     height: 500px;
     margin-top: 50px;
     margin-bottom: 50px;
-}
-
-.support_features {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.items_of_support {
-    border: 2px solid black;
-    flex-direction: column;
 }
